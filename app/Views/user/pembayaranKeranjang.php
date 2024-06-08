@@ -36,9 +36,9 @@
                     <?php foreach ($keranjang as $produk) : ?>
                     <tr>
 
-                        <td hidden><?= $produk['id'] ?></td>
+                        <td hidden><?= $produk['id_barang'] ?></td>
                         <input type="number" name="id_product" value="<?= $produk['id'] ?>" class="id" hidden>
-                        <td><img src="<?= base_url('assets/images/produk/' . $produk['id'] . '/' . $produk['gambar']); ?>"
+                        <td><img src="<?= base_url('assets/images/produk/' . $produk['id_barang'] . '/' . $produk['gambar']); ?>"
                                 width="50">
                         </td>
                         <td>
@@ -88,42 +88,37 @@
 
         <div class="card" style="background :#DDD4CD">
             <h5 class="card-header">Pilihan Pembayaran</h5>
+            
+            
             <div class="card-body">
                 <div class="payment-options">
-
-                    <ul style="align-items: baseline;">
+                    <ul class="list-group">
                         <li class="list-group-item">
-                            <div class="card-body">
-                                <div class="d-flex">
-                                    <input type="radio" name="payment" value="Paypay" class="payment-radio"
-                                        aria-selected="true" checked>
-                                    <img src="Paypay.png" class="payment-logo">
-                                    <p class="card-text">Paypay</p>
-                                </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="payment" value="Paypay" class="payment-radio" aria-selected="true" checked>
+                                <img src="<?= base_url('img/Paypay.png'); ?>" width="50" class="payment-logo" alt="Paypay Logo">
+                                <p class="card-text mb-0 ml-3">Paypay</p>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="card-body">
-                                <div class="d-flex">
-                                    <input type="radio" name="payment" value="Mastercard" class="payment-radio">
-                                    <img src="Mastercard.png" class="payment-logo">
-                                    <p class="card-text">Mastercard</p>
-                                </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="payment" value="Mastercard" class="payment-radio">
+                                <img src="<?= base_url('img/Mastercard.png'); ?>" width="50" class="payment-logo" alt="Mastercard Logo">
+                                <p class="card-text mb-0 ml-3">Mastercard</p>
                             </div>
                         </li>
                         <li class="list-group-item">
-                            <div class="card-body">
-                                <div class="d-flex">
-                                    <input type="radio" name="payment" value="Visa" class="payment-radio">
-                                    <img src="Visa.png" class="payment-logo">
-                                    <p class="card-text">Visa</p>
-                                </div>
+                            <div class="d-flex align-items-center">
+                                <input type="radio" name="payment" value="Visa" class="payment-radio">
+                                <img src="<?= base_url('img/Visa.png'); ?>" width="50" class="payment-logo" alt="Visa Logo">
+                                <p class="card-text mb-0 ml-3">Visa</p>
                             </div>
                         </li>
                     </ul>
-
                 </div>
             </div>
+
+
         </div>
 
         <div class="d-grid gap-2" style="margin: 20px;">

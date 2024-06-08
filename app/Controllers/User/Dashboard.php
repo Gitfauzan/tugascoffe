@@ -202,7 +202,6 @@ class Dashboard extends BaseController
 
         $keranjang = new KeranjangModel();
         $data['keranjang'] = $keranjang->getjoinkeranjang($this->session->get('id'));
-
         echo view('user/pembayaranKeranjang', $data);
     }
 

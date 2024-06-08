@@ -42,7 +42,7 @@ $routes->setAutoRoute(true);
 $routes->get('/login', 'UserAutentifikasi::login');
 $routes->get('/register', 'UserAutentifikasi::register');
 $routes->post('/valid_register', 'UserAutentifikasi::valid_register');
-$routes->post('/valid_login', 'userAutentifikasi::valid_login');
+$routes->post('/valid_login', 'UserAutentifikasi::valid_login');
 $routes->get('/logout', 'UserAutentifikasi::logout');
 $routes->get('/editProfile', 'User\Dashboard::Profile');
 
@@ -71,12 +71,12 @@ $routes->group('user', ['filter' => 'userAutentifikasi'], function ($routes) {
 });
 
 // ini untuk admin
-$routes->get('/administrator', 'auth::login');
-$routes->get('/auth/login', 'auth::login');
-$routes->get('/auth/register', 'auth::register');
-$routes->post('/auth/valid_register', 'auth::valid_register');
-$routes->post('/auth/valid_login', 'auth::valid_login');
-$routes->get('/auth/logout', 'auth::logout');
+$routes->get('/administrator', 'Auth::login');
+$routes->get('/auth/login', 'Auth::login');
+$routes->get('/auth/register', 'Auth::register');
+$routes->post('/auth/valid_register', 'Auth::valid_register');
+$routes->post('/auth/valid_login', 'Auth::valid_login');
+$routes->get('/auth/logout', 'Auth::logout');
 
 
 $routes->get('/admin', 'Admin\Admin::index', ['filter' => 'auth']);
