@@ -1,0 +1,26 @@
+[17-Apr-2024 03:47:26 UTC] PHP Warning:  require(/home/petarun2/public_html/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/petarun2/public_html/index.php on line 32
+[17-Apr-2024 03:47:26 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/petarun2/public_html/../app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/petarun2/public_html/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/petarun2/public_html/index.php on line 32
+[17-Apr-2024 03:47:30 UTC] PHP Warning:  require(/home/petarun2/public_html/../app/Config/Paths.php): Failed to open stream: No such file or directory in /home/petarun2/public_html/index.php on line 32
+[17-Apr-2024 03:47:30 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/petarun2/public_html/../app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/petarun2/public_html/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/petarun2/public_html/index.php on line 32
+[17-Apr-2024 03:51:07 UTC] PHP Warning:  require(/home/petarun2/public_html//MeCoffeVersion3/app/Config/Paths.php): Failed to open stream: No such file or directory in /home/petarun2/public_html/index.php on line 32
+[17-Apr-2024 03:51:07 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/petarun2/public_html//MeCoffeVersion3/app/Config/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/petarun2/public_html/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/petarun2/public_html/index.php on line 32
+[30-Apr-2024 15:25:04 UTC] PHP Warning:  require(/home/petarun2/public_html/../MeCoffeVersion3/app/Configs/Paths.php): Failed to open stream: No such file or directory in /home/petarun2/public_html/index.php on line 32
+[30-Apr-2024 15:25:04 UTC] PHP Fatal error:  Uncaught Error: Failed opening required '/home/petarun2/public_html/../MeCoffeVersion3/app/Configs/Paths.php' (include_path='.:/opt/alt/php82/usr/share/pear:/opt/alt/php82/usr/share/php:/usr/share/pear:/usr/share/php') in /home/petarun2/public_html/index.php:32
+Stack trace:
+#0 {main}
+  thrown in /home/petarun2/public_html/index.php on line 32
+[30-Apr-2024 16:50:11 UTC] PHP Parse error:  syntax error, unexpected variable "$config", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64
+[30-Apr-2024 16:50:11 UTC] PHP Parse error:  syntax error, unexpected variable "$config", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64
+[30-Apr-2024 16:50:15 UTC] PHP Parse error:  syntax error, unexpected variable "$config", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64
+[30-Apr-2024 16:50:20 UTC] PHP Parse error:  syntax error, unexpected variable "$config", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64
+[30-Apr-2024 16:50:27 UTC] PHP Parse error:  syntax error, unexpected variable "$config", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64
+[30-Apr-2024 16:52:02 UTC] PHP Parse error:  syntax error, unexpected single-quoted string "REQUEST_URI", expecting "function" or "const" in /home/petarun2/MeCoffeVersion3/app/Config/App.php on line 64

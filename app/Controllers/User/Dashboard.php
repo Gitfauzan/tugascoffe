@@ -17,7 +17,7 @@ class Dashboard extends BaseController
     public function index()
     {
 
-        $produk = ProdukModel();
+        $produk = new ProdukModel();
         $kunci = $this->request->getVar('keyword');
         $ukuran = $this->request->getVar('ukuran');
         if ($kunci !== null) {
@@ -202,7 +202,6 @@ class Dashboard extends BaseController
 
         $keranjang = new KeranjangModel();
         $data['keranjang'] = $keranjang->getjoinkeranjang($this->session->get('id'));
-
         echo view('user/pembayaranKeranjang', $data);
     }
 
