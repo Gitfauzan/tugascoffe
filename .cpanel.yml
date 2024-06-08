@@ -1,0 +1,15 @@
+---
+deployment:
+  tasks:
+    - export DEPLOYPATHPUBLIC=/home/petarun2/public_html/
+    - /bin/cp -R assets $DEPLOYPATHPUBLIC
+    - /bin/cp -R css $DEPLOYPATHPUBLIC
+    - /bin/cp -R img $DEPLOYPATHPUBLIC
+    - /bin/cp -R js $DEPLOYPATHPUBLIC
+    - /bin/cp -R scss $DEPLOYPATHPUBLIC
+    - /bin/cp -R vendor $DEPLOYPATHPUBLIC
+    - /bin/cp .htaccess $DEPLOYPATHPUBLIC
+    - /bin/cp favicon.ico $DEPLOYPATHPUBLIC
+    - /bin/cp error_log $DEPLOYPATHPUBLIC
+    - /bin/cp index.php $DEPLOYPATHPUBLIC
+    - /bin/cp robots.txt $DEPLOYPATHPUBLIC
