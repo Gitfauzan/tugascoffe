@@ -3,4 +3,4 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/petarun2/MeCoffeVersion3/
     - export DEPLOYPATHPUBLIC=/home/petarun2/public_html/
-    - /public/cp nana.txt $DEPLOYPATHPUBLIC
+    - /bin/cp -R public/img $DEPLOYPATHPUBLIC
