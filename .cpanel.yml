@@ -3,4 +3,26 @@ deployment:
   tasks:
     - export DEPLOYPATH=/home/petarun2/MeCoffeVersion3/
     - export DEPLOYPATHPUBLIC=/home/petarun2/public_html/
+    - /bin/cp -R public/assets $DEPLOYPATHPUBLIC
+    - /bin/cp -R public/css $DEPLOYPATHPUBLIC
     - /bin/cp -R public/img $DEPLOYPATHPUBLIC
+    - /bin/cp -R public/js $DEPLOYPATHPUBLIC
+    - /bin/cp -R public/scss $DEPLOYPATHPUBLIC
+    - /bin/cp -R public/vendor $DEPLOYPATHPUBLIC
+    - /bin/cp public/.htaccess $DEPLOYPATHPUBLIC
+    - /bin/cp public/favicon.ico $DEPLOYPATHPUBLIC
+    - /bin/cp public/error_log $DEPLOYPATHPUBLIC
+    - /bin/cp public/index.php $DEPLOYPATHPUBLIC
+    - /bin/cp public/robots.txt $DEPLOYPATHPUBLIC
+    - /bin/cp -R app $DEPLOYPATH
+    - /bin/cp -R tests $DEPLOYPATH
+    - /bin/cp -R vendor $DEPLOYPATH
+    - /bin/cp -R writable $DEPLOYPATH
+    - /bin/cp .env $DEPLOYPATH
+    - /bin/cp builds $DEPLOYPATH
+    - /bin/cp composer.json $DEPLOYPATH
+    - /bin/cp composer.lock $DEPLOYPATH
+    - /bin/cp LICENSE $DEPLOYPATH
+    - /bin/cp phpunit.xml.dist $DEPLOYPATH
+    - /bin/cp preload.php $DEPLOYPATH
+    - /bin/cp spark $DEPLOYPATH
