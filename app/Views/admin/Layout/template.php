@@ -16,7 +16,7 @@
     <link href="https://fonts.googleapis.com/css?family=Nunito:200,200i,300,300i,400,400i,600,600i,700,700i,800,800i,900,900i" rel="stylesheet">
 
     <!-- Custom styles for this template-->
-    <link href="/css/sb-admin-2.min.css" rel="stylesheet">
+    <link href="/css/sb-admin-3.min.css" rel="stylesheet">
 
 </head>
 
@@ -37,10 +37,12 @@
 
             <!-- Sidebar - Brand -->
             <a class="sidebar-brand d-flex align-items-center justify-content-center" href="#">
-                <div class="sidebar-brand-icon rotate-n-15">
-                    <i class="fas fa-laugh-wink"></i>
+                <div class="sidebar-brand-icon">
+                    <i>
+                        <img src="/css/Bean_Caffrine.png" alt="logo kopi" style="height: 50px; width: 50px;">
+                    </i>
                 </div>
-                <div class="sidebar-brand-text mx-3">Admin Mecofee</div>
+                <div class="sidebar-brand-text s-5">Admin</br>Bean Coffeine</div>
             </a>
 
             <!-- Divider -->
