@@ -131,7 +131,7 @@
 <header>
     <?php $session = session() ?>
     <div class="container">
-        <h1>MeCoffe</h1>
+        <h1>Bean Caffeine</h1>
     </div>
 
 
