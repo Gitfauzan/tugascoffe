@@ -33,7 +33,7 @@ require FCPATH . '../MeCoffeVersion3/app/Config/Paths.php';
 // ^^^ Change this line if you move your application folder
 
 $paths = new Config\Paths();
-
+$pp = kkj;
 // Location of the framework bootstrap file.
 require rtrim($paths->systemDirectory, '\\/ ') . DIRECTORY_SEPARATOR . 'bootstrap.php';
 
