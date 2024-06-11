@@ -17,6 +17,8 @@ jobs:
         username: githubftp@petarungan.my.id
         password: ${{ secrets.ftp_password }}
         local-dir: ./lala/
+        exclude: |
+          index.html
 
           
           
