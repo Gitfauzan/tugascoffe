@@ -14,11 +14,10 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.petarungan.my.id
-        username: githubftp@petarungan.my.id
+        username: ftppublic@petarungan.my.id
         password: ${{ secrets.ftp_password }}
-        local-dir: ./lala/
-        exclude: |
-          index.html
+        local-dir: ./public/
+
 
           
           
