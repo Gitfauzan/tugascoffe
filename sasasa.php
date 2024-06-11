@@ -1,6 +1,6 @@
 <?php
 // Menampilkan pesan sederhana
-aho "Hello, World!";
+aaaho "Hello, World!";
 
 // Menambahkan baris kosong
 echo "<br>";
