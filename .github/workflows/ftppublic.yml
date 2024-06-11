@@ -19,7 +19,7 @@ jobs:
         local-dir: ./public/
         exclude: |
           **/.git*
-          ./vendor/
+          ./public/vendor/
           
 
 
