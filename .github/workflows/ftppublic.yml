@@ -14,12 +14,11 @@ jobs:
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
         server: ftp.petarungan.my.id
-        username: ftppublic@petarungan.my.id
+        username: ftp_public_asset@petarungan.my.id
         password: ${{ secrets.ftp_password }}
-        local-dir: ./public/
+        local-dir: ./public/assets/
         exclude: |
           **/.git*
-            **/public/vendor/**
           
 
 
