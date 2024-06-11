@@ -15,7 +15,7 @@ jobs:
       with:
         server: ftp.petarungan.my.id
         username: githubftp@petarungan.my.id
-        password: RQLcY*$O-=+7
+        password: ${{ secrets.ftp_password }}
         local-dir: ./lala/
 
           
