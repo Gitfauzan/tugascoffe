@@ -15,9 +15,9 @@ jobs:
       with:
         path: /lala/
         server: ftp.petarungan.my.id
-        username: githubftpcd@petarungan.my.id
+        username: githubftp@petarungan.my.id
         password: RQLcY*$O-=+7
-        exclude: |
-          gila.html
+        local-dir: ./lala/
+
           
           
