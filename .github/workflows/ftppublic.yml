@@ -16,7 +16,7 @@ jobs:
         server: ftp.petarungan.my.id
         username: ftppublic@petarungan.my.id
         password: ${{ secrets.ftp_password }}
-        local-dir: ./public/
+        local-dir: ./lala/
 
 
           
