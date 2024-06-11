@@ -16,9 +16,10 @@ jobs:
         server: ftp.petarungan.my.id
         username: ftp_public_asset@petarungan.my.id
         password: ${{ secrets.ftp_password }}
-        local-dir: ./public/assets/
+        local-dir: ./public/
         exclude: |
           **/.git*
+          vendor/**
           
 
 
