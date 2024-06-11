@@ -13,7 +13,6 @@ jobs:
     - name: 📂 Sync files
       uses: SamKirkland/FTP-Deploy-Action@v4.3.5
       with:
-        path: /lala/
         server: ftp.petarungan.my.id
         username: githubftp@petarungan.my.id
         password: RQLcY*$O-=+7
