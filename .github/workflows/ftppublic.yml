@@ -20,9 +20,9 @@ jobs:
         exclude: |
           **/.git*
           **/.git*/**
-          - .vendor
-          - .scss
-          - .js
+          **/.vendor*/**
+          **/.scss*/**
+          **/.js*/**
           
 
 
