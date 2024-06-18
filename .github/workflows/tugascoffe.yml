@@ -35,9 +35,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    - name: menambahkan test script ke composer json
-    "test": "vendor/bin/phpunit"
-tps://getcomposer.org/doc/articles/scripts.md
+    # Docs: https://getcomposer.org/doc/articles/scripts.md
 
     - name: Run test suite
       run: composer run-script test
