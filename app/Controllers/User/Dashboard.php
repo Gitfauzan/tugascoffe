@@ -17,7 +17,7 @@ class Dashboard extends BaseController
     public function index()
     {
 
-        $produk == new ProdukModel();
+        $produk = new ProdukModel();
         $kunci = $this->request->getVar('keyword');
         $ukuran = $this->request->getVar('ukuran');
         if ($kunci !== null) {
