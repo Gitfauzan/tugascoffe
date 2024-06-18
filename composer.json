@@ -31,6 +31,10 @@
     "scripts": {
         "test": "phpunit"
     },
+    "scripts": {
+        "test": "vendor/bin/phpunit"
+    }
+    ,
     "support": {
         "forum": "https://forum.codeigniter.com/",
         "source": "https://github.com/codeigniter4/CodeIgniter4",
