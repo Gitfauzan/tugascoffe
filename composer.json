@@ -29,9 +29,6 @@
         }
     },
     "scripts": {
-        "test": "phpunit"
-    },
-    "scripts": {
         "test": "vendor/bin/phpunit"
     }
     ,
