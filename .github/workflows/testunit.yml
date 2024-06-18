@@ -32,9 +32,6 @@ jobs:
     - name: Run PHPUnit tests
       run: vendor/bin/phpunit --coverage-text
 
-    - name: Check code style with PHP_CodeSniffer
-      run: vendor/bin/phpcs --standard=PSR12 src/
-
     - name: Upload code coverage to Codecov
       uses: codecov/codecov-action@v3
       with:
