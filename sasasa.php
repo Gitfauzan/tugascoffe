@@ -3,7 +3,7 @@
 aaaho "Hello, World!";
 
 // Menambahkan baris kosong
-echo "<br>";
+ho "<br>";
 
 // Menampilkan informasi PHP
 phpinfo();
