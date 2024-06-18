@@ -17,6 +17,15 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '8.0'
+        extensions: mbstring, intl, pdo, pdo_mysql
+        ini-values: post_max_size=256M, upload_max_filesize=256M, memory_limit=512M
+        tools: composer
+
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
       
