@@ -15,7 +15,7 @@ permissions:
 
 jobs:
   lint:
-    name: PHP ${{ matrix.php-version }} Lint with PHP CS Fixer
+  
     runs-on: ubuntu-22.04
 
     steps:
