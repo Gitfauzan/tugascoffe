@@ -21,7 +21,7 @@ jobs:
       run: composer validate --strict
       
      # menyimpan paket Composer yang diunduh ke cache
-    - name: Cache Composer packages
+    - name: menyimpan paket Composer yang diunduh ke cache
       id: composer-cache
       uses: actions/cache@v3
       with:
@@ -35,6 +35,7 @@ jobs:
       run: composer install --prefer-dist --no-progress
 
     # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
+    - name: menambahkan test script ke composer json
     "test": "vendor/bin/phpunit"
 tps://getcomposer.org/doc/articles/scripts.md
 
