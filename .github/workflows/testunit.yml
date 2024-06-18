@@ -1,53 +1,50 @@
-name: Coding Standards
+name: PHP CI
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "fauzan" ]
-
-concurrency:
-  group: ${{ github.workflow }}-${{ github.head_ref || github.run_id }}
-  cancel-in-progress: true
-
-permissions:
-  contents: read
+    branches: [ main ]
 
 jobs:
   build:
-  
-    runs-on: ubuntu-22.04
+
+    runs-on: ubuntu-latest
 
     steps:
-      - name: Checkout
-        uses: actions/checkout@v4
+    - name: Checkout code
+      uses: actions/checkout@v4
 
-      - name: Setup PHP
-        uses: shivammathur/setup-php@v2
+    - name: Set up PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: '7.4'
+        extensions: mbstring, intl, xdebug
+        coverage: xdebug
 
-      - name: Get composer cache directory
-        run: echo "COMPOSER_CACHE_FILES_DIR=$(composer config cache-files-dir)" >> $GITHUB_ENV
+    - name: Get Composer cache directory
+      id: composer-cache
+      run: echo "::set-output name=dir::$(composer config cache-files-dir)"
 
-      - name: Cache dependencies
-        uses: actions/cache@v4
-        with:
-          path: ${{ env.COMPOSER_CACHE_FILES_DIR }}
-          key: ${{ runner.os }}-${{ matrix.php-version }}-${{ hashFiles('**/composer.lock') }}
-          restore-keys: |
-            ${{ runner.os }}-${{ matrix.php-version }}-
-            ${{ runner.os }}-
+    - name: Cache Composer dependencies
+      uses: actions/cache@v3
+      with:
+        path: ${{ steps.composer-cache.outputs.dir }}
+        key: ${{ runner.os }}-composer-${{ hashFiles('**/composer.lock') }}
+        restore-keys: ${{ runner.os }}-composer-
 
-      - name: Install dependencies
-        run: composer update --ansi --no-interaction
+    - name: Install Composer dependencies
+      run: composer install --no-progress --prefer-dist
 
-      - name: Run lint on app/, admin/, public/
-        run: vendor/bin/php-cs-fixer fix --verbose --ansi --dry-run --config=.php-cs-fixer.no-header.php --using-cache=no --diff
+    - name: Run PHPUnit tests
+      run: vendor/bin/phpunit --coverage-text
 
-      - name: Run lint on system/, utils/, and root PHP files
-        run: vendor/bin/php-cs-fixer fix --verbose --ansi --dry-run --using-cache=no --diff
+    - name: Check code style with PHP_CodeSniffer
+      run: vendor/bin/phpcs --standard=PSR12 src/
 
-      - name: Run lint on tests
-        run: vendor/bin/php-cs-fixer fix --verbose --ansi --dry-run --config=.php-cs-fixer.tests.php --using-cache=no --diff
-
-      - name: Run lint on user_guide_src/source/
-        run: vendor/bin/php-cs-fixer fix --verbose --ansi --dry-run --config=.php-cs-fixer.user-guide.php --using-cache=no --diff
+    - name: Upload code coverage to Codecov
+      uses: codecov/codecov-action@v3
+      with:
+        files: ./coverage.xml
+        flags: unittests
+        name: codecov-umbrella
