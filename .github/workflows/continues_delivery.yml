@@ -1,4 +1,4 @@
-name: Continuous Integration and Delivery
+name: Continuous Integration and Deployment
 
 on:
   push:
@@ -10,14 +10,12 @@ permissions:
   contents: read
 
 jobs:
-  build1:
+  build:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
-
       - name: Validate composer.json and composer.lock
         run: composer validate --strict
-
       - name: Cache Composer packages
         id: composer-cache
         uses: actions/cache@v3
@@ -26,17 +24,14 @@ jobs:
           key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
           restore-keys: |
             ${{ runner.os }}-php-
-
       - name: Install dependencies
         run: composer install --prefer-dist --no-progress
-
       - name: Run test suite
-        run: |
-          composer run-script test
-          
+        run: composer run-script test
+
   approval:
     runs-on: ubuntu-latest
-    needs: build1
+    needs: build
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Await Approval
@@ -44,38 +39,46 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           reviewers: Gitfauzan # Ganti dengan nama pengguna GitHub Anda
-          
-  deploy1:
-    name: Deploy to continues delivery1
+
+  deploy:
     runs-on: ubuntu-latest
     needs: approval
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
-
       - name: Sync files to production
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.petarungan.my.id
-          username: continues_delivery1@petarungan.my.id
-          password: ${{ secrets.delivery1 }}
-          local-dir: ./lala/
-        
+          username: ftppublic@petarungan.my.id
+          password: ${{ secrets.ftp_password }}
+          local-dir: ./public/
+          exclude: |
+            **/.git*
+            vendor/**
 
-  web-deploy1:
-    name: Deploy to continues delivery2
+  web-deploy:
+    name: Deploy to web server
     runs-on: ubuntu-latest
-    needs: deploy1
+    needs: deploy
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Get latest code
         uses: actions/checkout@v4
-
       - name: Sync files to web server
         uses: SamKirkland/FTP-Deploy-Action@v4.3.5
         with:
           server: ftp.petarungan.my.id
-          username: deivery2@petarungan.my.id
-          password: ${{ secrets.delivery2 }}
-          local-dir: ./lala/
+          username: contentftp@petarungan.my.id
+          password: ${{ secrets.ftp_password }}
+          exclude: |
+            **/.git*
+            vendor/**
+            writable/**
+            test/**
+            tests/**
+            public/**
+            .github/**
+            .git/**
+            git/**
