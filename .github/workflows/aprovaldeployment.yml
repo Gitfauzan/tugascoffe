@@ -1,0 +1,62 @@
+name: Deployment Workflow Aproval 🚀 Deploy
+
+on:
+  workflow_run:
+    workflows: ["PHP Composer"]
+    types:
+      - completed
+
+jobs:
+  web-deploy:
+    name: 🎉 Deploy
+    runs-on: ubuntu-latest
+    steps:
+    - name: 🚚 Get latest code
+      uses: actions/checkout@v4
+
+    - name: Request approval for deployment
+      uses: actions/github-script@v6
+      with:
+        script: |
+          const { createDeployment, createDeploymentStatus } = require('@octokit/plugin-deployment');
+          const { Octokit } = require('@octokit/rest');
+          const octokit = new Octokit({ auth: `${{ secrets.GITHUB_TOKEN }}` });
+    
+          const deployment = await octokit.repos.createDeployment({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            ref: context.ref,
+            required_contexts: [],
+            environment: 'production',
+            auto_merge: false,
+            transient_environment: false,
+            description: 'Deploy to production environment',
+          });
+    
+          await octokit.repos.createDeploymentStatus({
+            owner: context.repo.owner,
+            repo: context.repo.repo,
+            deployment_id: deployment.data.id,
+            state: 'success',
+            log_url: context.payload.workflow_run.html_url,
+            description: 'Deployment approved',
+            environment_url: 'https://example.com',
+            auto_inactive: true,
+          });
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp.petarungan.my.id
+        username: contentftp@petarungan.my.id
+        password: ${{ secrets.ftp_password }}
+        exclude: |
+          **/.git*
+          vendor/**
+          writable/**
+          test/**
+          tests/**
+          public/**
+          .github/**
+          .git/**
+          git/**
