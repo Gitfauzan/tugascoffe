@@ -35,10 +35,7 @@ jobs:
     if: github.ref == 'refs/heads/main'
     steps:
       - name: Await Approval
-        uses: hmarr/await-approval-action@v1
-        with:
-          token: ${{ secrets.GITHUB_TOKEN }}
-          reviewers: Gitfauzan # Ganti dengan nama pengguna GitHub Anda
+        run: echo "Waiting for manual approval. Please approve the workflow run in GitHub UI."
 
   deploy:
     runs-on: ubuntu-latest
