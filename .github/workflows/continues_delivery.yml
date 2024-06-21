@@ -34,12 +34,14 @@ jobs:
       needs: build
       if: github.ref == 'refs/heads/main'
       steps:
-        - name: Manual Approval
-          id: approval
-          uses: github/docs/actions/wait-for-manual-action@v0.2.0
-          with:
-            approve-message: "Please approve to continue deployment."
-            repository-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Wait for Approval
+        uses: arun291091/wait_for_approval_gha@v1
+        with:
+          base_repository_branch: main # Nama branch utama Anda
+          repository_name: Gitfauzan/tugascoffe # Nama repositori GitHub Anda
+          pr_reviewer: Gitfauzan # Nama pengguna GitHub dari reviewer yang ditentukan (pisahkan dengan koma jika lebih dari satu)
+          time_limit: 1800 # Batas waktu dalam detik untuk menunggu persetujuan (misalnya, 1800 detik = 30 menit)
+          github_token: ${{ secrets.GITHUB_TOKEN }}
 
   deploy:
     runs-on: ubuntu-latest
