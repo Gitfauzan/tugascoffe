@@ -1,4 +1,4 @@
-name: Deployment Workflow Aproval 🚀 Deploy
+name: delivery Deployment Workflow Aproval
 
 on:
   workflow_run:
