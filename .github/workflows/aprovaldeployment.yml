@@ -24,16 +24,7 @@ jobs:
         server: ftp.petarungan.my.id
         username: continues_delivery1@petarungan.my.id
         password: ${{ secrets.delivery1 }}
-        exclude: |
-          **/.git*
-          vendor/**
-          writable/**
-          test/**
-          tests/**
-          public/**
-          .github/**
-          .git/**
-          git/**
+        local-dir: ./lala/
 
 
   delivery2:
