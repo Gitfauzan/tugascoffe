@@ -1,13 +1,10 @@
 name: Continuous Integration and Deployment
 
 on:
-  push:
-    branches: [ "main" ]
-  pull_request:
-    branches: [ "fauzan" ]
-
-permissions:
-  contents: read
+  workflow_run:
+    workflows: ["PHP Composer"]
+    types:
+      - completed
 
 jobs:
   build:
