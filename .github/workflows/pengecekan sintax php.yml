@@ -2,7 +2,7 @@ name: pengecekan sintax php
 
 on:
   push:
-    branches: [ "fauzan" ]
+    branches: [ "main" ]
 
 
 permissions:
