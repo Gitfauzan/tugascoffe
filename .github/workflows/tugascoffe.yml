@@ -4,7 +4,7 @@ on:
   push:
     branches: [ "main" ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ "fauzan" ]
 
 permissions:
   contents: read
@@ -19,8 +19,9 @@ jobs:
 
     - name: Validate composer.json and composer.lock
       run: composer validate --strict
-
-    - name: Cache Composer packages
+      
+     # menyimpan paket Composer yang diunduh ke cache
+    - name: menyimpan paket Composer yang diunduh ke cache
       id: composer-cache
       uses: actions/cache@v3
       with:
@@ -28,12 +29,16 @@ jobs:
         key: ${{ runner.os }}-php-${{ hashFiles('**/composer.lock') }}
         restore-keys: |
           ${{ runner.os }}-php-
-
+          
+     # menginstal dependensi proyek
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress
 
-    # Add a test script to composer.json, for instance: "test": "vendor/bin/phpunit"
-    # Docs: https://getcomposer.org/doc/articles/scripts.md
+  
 
-    # - name: Run test suite
-    #   run: composer run-script test
+    - name: Run test suite
+      run: |
+        composer run-script test
+        
+ 
+        

@@ -99,7 +99,7 @@
 <header>
     <?php $session = session() ?>
     <div class="container">
-        <h1>MeCoffe</h1>
+        <h1>Bean Caffeine</h1>
     </div>
     <div class="profile" onclick="toggleDropdown()">
         <div class="profile-name"><?php echo $session->get('username') ?></div>

@@ -1,0 +1,44 @@
+name: delivery Deployment Workflow Aproval
+
+on:
+  workflow_run:
+    workflows: ["PHP Composer"]
+    types:
+      - completed
+
+jobs:
+  delivery1:
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    runs-on: ubuntu-latest
+    environment:
+      name: production
+      url: https://petarungan.my.id/
+    
+    steps:
+    - name: 🚚 Get latest code delivery 1
+      uses: actions/checkout@v4
+    
+    - name: 📂 Sync files
+      uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+      with:
+        server: ftp.petarungan.my.id
+        username: continues_delivery1@petarungan.my.id
+        password: ${{ secrets.delivery1 }}
+        local-dir: ./lala/
+
+
+  delivery2:
+    name: Deploy to delivery2
+    runs-on: ubuntu-latest
+    needs: delivery1
+    steps:
+      - name: 🚚 Get latest code delivery2
+        uses: actions/checkout@v4
+
+      - name: Sync files to web server
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ftp.petarungan.my.id
+          username: deivery2@petarungan.my.id
+          password: ${{ secrets.delivery2 }}
+          local-dir: ./lala/
