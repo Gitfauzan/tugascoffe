@@ -1,0 +1,264 @@
+:root {
+    --primary: #654321;
+    --bg: rgb(245, 222, 179);
+    --font: #FFF8DC;
+    --hitam: #080808;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+}
+
+body,
+html {
+    height: 100vh;
+    margin: 0;
+    -webkit-user-select: none;
+    /* Safari */
+    -moz-user-select: none;
+    /* Firefox */
+    -ms-user-select: none;
+    /* Internet Explorer/Edge */
+    user-select: none;
+    /* Standard */
+}
+
+section {
+    height: 100vh;
+    width: 100%;
+    background: url(../asset/Login\ User.jpg) no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.diagonal-background {
+    /* background: linear-gradient(to bottom right, var(--primary) 50%, var(--bg) 50%); */
+    z-index: -1000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* background-image: url(../asset/Login\ User.jpg); */
+}
+
+.container {
+    position: relative;
+    display: flex;
+    background: var(--font);
+    width: 60rem;
+    height: 37rem;
+    background-color: var(--font);
+    box-shadow: -2px 1px 10px #654321;
+}
+
+.close-icon {
+    position: absolute;
+    left: 1rem;
+    top: 1rem;
+    color: var(--font);
+}
+
+/* .left,
+.right {
+    width: 50%;
+} */
+
+.left img {
+    flex: 1 1 45rem;
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
+.right {
+    flex: 1 1 45rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
+
+.register-box {
+    text-align: center;
+    width: 100%;
+    padding: 0 10px;
+}
+
+.register-box .logo {
+    display: block;
+    padding-bottom: 0.1rem;
+}
+
+.register-box h1 {
+    font-size: 2em;
+    padding-bottom: 0.1rem;
+    color: #8B4513;
+}
+
+.register-box p {
+    padding-bottom: 2rem;
+    color: #8B4513;
+}
+
+.register-box .Silahkan {
+    padding-bottom: 0.11rem;
+}
+
+.textbox {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.8rem;
+    padding: 3px 10px;
+    background: var(--font);
+    border: none;
+    border-bottom: 1px solid #8B4513;
+    outline: none;
+    color: #8B4513;
+}
+
+.textbox #icon-user-btn {
+    color: var(--primary);
+}
+
+.textbox #icon-pass-btn {
+    color: var(--primary);
+}
+
+.textbox #icon-eye {
+    color: var(--primary);
+}
+
+.textbox #icon-eye-conf {
+    color: var(--primary);
+}
+
+.textbox .eye {
+    font-size: 18px;
+}
+
+.textbox #icon-conf-btn {
+    color: var(--primary);
+}
+
+.textbox #no-phone-btn {
+    color: var(--primary);
+}
+
+.textbox #address-btn {
+    color: var(--primary);
+}
+
+.textbox input {
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 10px;
+    font-size: 1.2rem;
+    width: 100%;
+    border: none;
+    color: var(--primary);
+    background-color: transparent;
+}
+
+.textbox input::placeholder {
+    color: #65432156;
+}
+
+.btn {
+    width: 100%;
+    font-weight: 700;
+    background: var(--primary);
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    color: var(--font);
+    border: 2px solid var(--primary);
+    font-size: 1em;
+    transition-property: background, color;
+    transition-duration: 200ms;
+}
+
+.btn:hover {
+    background: var(--font);
+    color: var(--primary);
+}
+
+a {
+    color: blue;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+.register-box .quest {
+    padding-top: 0.5rem;
+}
+
+@media (max-width: 1366px) {
+    html {
+        font-size: 75%;
+    }
+
+    .register-box {
+        padding-top: 1.2rem;
+    }
+}
+
+@media (max-width: 768px) {
+    html {
+        font-size: 62.5%;
+    }
+
+    .container {
+        flex-wrap: wrap;
+        width: 57%;
+        height: 94%;
+    }
+
+    .left {
+        height: 49%;
+    }
+
+    .right {
+        align-items: flex-start;
+    }
+
+    .register-box {
+
+        width: 90%;
+    }
+
+    .btn {
+        font-size: 90%;
+        padding: 7px;
+    }
+}
+
+@media (max-width: 450px) {
+    html {
+        font-size: 55%;
+    }
+
+    .container {
+        width: 72%;
+        height: 73%;
+    }
+
+    .left {
+        height: 39%;
+    }
+
+    .right {
+        align-items: flex-start;
+    }
+
+    .register-box {
+        width: 100%;
+        padding: 0;
+    }
+}

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/register-style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- Feather Icons -->
+    <script src="https://unpkg.com/feather-icons"></script>
+</head>
+
+<body>
+    <section class="diagonal-background">
+        <div class="container">
+            <a href="login.html" class="close-icon"><i data-feather="arrow-left"></i></a>
+            <div class="left">
+                <img src="../asset/about-us-img.jpg" alt="Coffee">
+            </div>
+            <div class="right">
+                <div class="register-box">
+                    <a class="logo" href="#">LOGO</a>
+                    <h1>Bean Caffeine</h1>
+                    <p>Kopi Berkualitas, Energi Tanpa Batas</p>
+                    <p class="Silahkan">Silahkan Daftar!</p>
+                    <form>
+                        <!-- Username Start -->
+                        <div class="textbox" for="user-name">
+                            <a href="#" id="icon-user-btn"><i data-feather="user"></i></a>
+                            <input type="text" placeholder="Masukan Username" name="username" id="user-name" required>
+                        </div>
+                        <!-- Username End -->
+
+                        <!-- Password Start -->
+                        <div class="textbox">
+                            <a href="#" id="icon-pass-btn"><i data-feather="lock"></i></a>
+                            <input type="password" placeholder="Masukan Password" name="password" id="pass" class="pass"
+                                required>
+                            <a href="#" id="eye"><i class="fas fa-eye eye" id="icon-eye" class="icon-eye"></i></a>
+                        </div>
+                        <!-- Password End -->
+
+                        <!-- Confirmation Password Start -->
+                        <div class="textbox">
+                            <a href="#" id="icon-conf-btn"><i data-feather="lock"></i></a>
+                            <input type="password" placeholder="Konfirmasi Ulang Password" name="password"
+                                id="conf-pass" class="pass-confirm" required>
+                            <a href="#" id="eye"><i class="fas fa-eye eye" id="icon-eye-conf" class="icon-eye"></i></a>
+                        </div>
+                        <!-- Confirmation Password End -->
+
+                        <!-- No. Phone Start -->
+                        <div class="textbox" for="no-phone">
+                            <a href="#" id="no-phone-btn"><i data-feather="phone"></i></a>
+                            <input type="text" placeholder="Masukan Nomor Telepon" name="no-phone" id="no-phone"
+                                required>
+                        </div>
+                        <!-- No. Phone End -->
+
+                        <!-- Address Start -->
+                        <div class="textbox" for="address">
+                            <a href="#" id="address-btn"><i data-feather="home"></i></a>
+                            <input type="text" placeholder="Masukan Alamat" name="address" id="address" required>
+                        </div>
+                        <!-- Address End -->
+
+                        <button type="submit" class="btn">Daftar</button>
+                    </form>
+                    <p class="quest">Sudah punya akun? <a href="login.html">Login disini</a></p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Feather Icons -->
+    <script>
+        feather.replace();
+    </script>
+
+    <script src="../js/register-scripts.js"></script>
+</body>
+
+</html>

@@ -8,8 +8,11 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>User Dashboard</title>
     <style>
+        body{
+            background-color: #fff8dc;
+        }
         header {
-            background-color: #0A0908;
+            background-color: #654321;
             color: #fff;
             padding: 20px;
             display: flex;
@@ -26,7 +29,11 @@
 
         .sidebar {
             width: 250px;
-            background-color: #f8f9fa;
+            background-color: #f3ddb2;
+        }
+        #search{
+            color: #654321;
+            border-color: #654321;
         }
 
         .card {
@@ -173,7 +180,7 @@
                                 <form class="d-flex" action="" method="GET" enctype="multipart/form-data">
 
                                     <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search" name="keyword">
-                                    <button class="btn btn-outline-warning my-2 my-sm-0" type="submit">Search</button>
+                                    <button class="btn btn-outline my-2 my-sm-0" type="submit" id="search">Search</button>
                                 </form>
                             </div>
                         </div>
