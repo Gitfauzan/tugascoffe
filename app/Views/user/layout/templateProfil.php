@@ -9,8 +9,11 @@
         integrity="sha384-9ndCyUaIbzAi2FUVXJi0CjmCapSmO7SnpJef0486qhLnuZ2cdeRhO02iuK6FUUVM" crossorigin="anonymous">
     <title>User Dashboard</title>
     <style>
+     body{
+            background-color: #fff8dc;
+        }
     header {
-        background-color: #0A0908;
+        background-color: #654321;
         color: #fff;
         padding: 20px;
         display: flex;

@@ -10,8 +10,11 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <title>User Pembayaran</title>
     <style>
+     body{
+            background-color: #fff8dc;
+        }
     header {
-        background-color: #0A0908;
+        background-color: #654321;
         color: #fff;
         padding: 20px;
         display: flex;
