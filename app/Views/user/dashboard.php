@@ -6,6 +6,20 @@
         display: flex;
         flex-direction: column;
         height: 100%;
+        width: 100%;
+        /* Atur lebar kartu untuk mengisi kolom */
+        max-width: 300px;
+        /* Sesuaikan lebar maksimal kartu sesuai kebutuhan */
+        margin: auto;
+        /* Mengatur margin untuk mengatur kartu ke tengah kolom */
+    }
+
+    .card-img-top {
+        width: 100%;
+        height: 200px;
+        /* Atur tinggi gambar */
+        object-fit: cover;
+        /* Menjaga proporsi gambar */
     }
 
     .card-body {
@@ -22,6 +36,17 @@
     .btn-container .btn {
         width: 100%;
     }
+
+    .placeholder-image {
+        width: 100%;
+        height: 200px;
+        /* Sama dengan tinggi gambar */
+        background: #f0f0f0;
+        /* Warna latar placeholder */
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
 </style>
 
 <div class="container">
@@ -29,11 +54,11 @@
     <div class="row">
         <?php foreach ($produk as $p) : ?>
             <div class="col-6 col-md-4 col-lg-3 mb-4">
-                <div class="card mx-auto" style="height: 100%;">
+                <div class="card mx-auto">
                     <?php if (!empty($p['gambar'])) : ?>
-                        <img src="<?= base_url('assets/images/produk/' . $p['id'] . '/' . $p['gambar']); ?>" class="card-img-top" alt="<?= $p['nama'] ?>" width="100%" height="250px">
+                        <img src="<?= base_url('assets/images/produk/' . $p['id'] . '/' . $p['gambar']); ?>" class="card-img-top" alt="<?= $p['nama'] ?>">
                     <?php else : ?>
-                        <div class="placeholder-image" style="height: 250px;"></div>
+                        <div class="placeholder-image">No Image</div>
                     <?php endif; ?>
                     <div class="card-body">
                         <h4 class="card-title"><?= $p['nama'] ?></h4>
