@@ -3,7 +3,7 @@
 
 
 <div class="container">
-    <h2>Featured Products Coffe</h2>
+    <h2>Feature Products Coffe</h2>
     <div class="container">
         <div class="row justify-content-between">
             <?php foreach ($produk as $p) : ?>
